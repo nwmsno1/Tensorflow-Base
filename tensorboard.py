@@ -86,4 +86,4 @@ if __name__ == '__main__':
     main()
     
     
-### run ommand 'tensorboard --logdir logs/' in terminal ###
+### run ommand 'tensorboard --logdir C:/Users/nwmsn/PycharmProjects/ProcessBar/' in terminal ###
