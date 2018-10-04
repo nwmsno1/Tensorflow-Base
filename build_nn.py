@@ -34,13 +34,14 @@ def build_nn():
     train_step = tf.train.GradientDescentOptimizer(0.1).minimize(loss)
 
     init = tf.global_variables_initializer()
-    
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
-    ax.scatter(x_data, y_data)
+    # s表示点点的大小，c就是color嘛，marker就是点点的形状哦o,x,*><^,都可以
+    # alpha,点点的亮度，label，标签
+    ax.scatter(x_data, y_data, marker='x')
+    # plt.ion()用于连续显示
     plt.ion()
     plt.show()
-    
     with tf.Session() as sess:
         sess.run(init)
         # train
@@ -55,7 +56,7 @@ def build_nn():
                     pass
                 prediction_value = sess.run(prediction, feed_dict={xs: x_data})
                 # plot the prediction
-                lines = ax.plot(x_data, prediction_value, 'r-', lw=5)
+                lines = ax.plot(x_data, prediction_value, 'r-', lw=2)
                 plt.pause(0.5)
 
 
